@@ -1,0 +1,8 @@
+public with sharing class RecentContacts {
+    @AuraEnabled(cacheable=true)
+    public static List<Account> recentContacts(){
+      return [SELECT Id,name,create_date__c FROM Account ORDER BY create_date__c DESC LIMIT 10];
+    }
+
+}
+
