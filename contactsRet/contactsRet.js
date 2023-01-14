@@ -1,8 +1,9 @@
-import { LightningElement, wire } from 'lwc';
+import { LightningElement} from 'lwc';
 import recentContacts from '@salesforce/apex/RecentContacts.recentContacts';
 export default class ContactsRet extends LightningElement {
 
-    data
+    data;
+    error;
 
     connectedCallback(){
         recentContacts().then(response =>{
@@ -12,3 +13,4 @@ export default class ContactsRet extends LightningElement {
 
     }
 }
+
